@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/house"
+            android:title="Home" />
+        <item
+            android:id="@+id/production"
+            android:icon="@drawable/contacts"
+            android:title="Production" />
+        <item
+            android:id="@+id/bookings"
+            android:icon="@drawable/book"
+            android:title="Bookings" />
+
+
+</menu>

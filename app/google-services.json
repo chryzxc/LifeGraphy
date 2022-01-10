@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "673902899856",
+    "firebase_url": "https://lifegraphy-evsu-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "lifegraphy-evsu",
+    "storage_bucket": "lifegraphy-evsu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673902899856:android:f719b11551f59f7dee9e15",
+        "android_client_info": {
+          "package_name": "lifegraphy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673902899856-du2qtue52ebmvt25a1gtkj2p3t39lq86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUppnEkXrIsOLpL4u06nHuF96sUzl4bsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673902899856-du2qtue52ebmvt25a1gtkj2p3t39lq86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

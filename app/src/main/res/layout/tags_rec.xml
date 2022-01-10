@@ -1,0 +1,54 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_rowWeight="1"
+    android:layout_columnWeight="1"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="3dp"
+        app:cardBackgroundColor="#99000000"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/imageTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:letterSpacing=".1"
+            android:text="Wild"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="normal|bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tagsRemove"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="right"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/popupRemove2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/popupImage"
+            app:layout_constraintEnd_toEndOf="@+id/popupImage"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/remove" />
+    </androidx.cardview.widget.CardView>
+
+</com.google.android.material.card.MaterialCardView>
