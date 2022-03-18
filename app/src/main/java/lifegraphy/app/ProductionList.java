@@ -3,11 +3,11 @@ package lifegraphy.app;
 
 public class ProductionList {
 
-    private String production_id, production_name,numOfMembers,description,minimum,maximum;
+    private String production_id, production_name,numOfMembers,description,minimum,maximum,events_covered;
 
 
 
-    public ProductionList(String production_id, String production_name,String numOfMembers, String description, String minimum, String maximum) {
+    public ProductionList(String production_id, String production_name,String numOfMembers, String description, String minimum, String maximum,String events_covered) {
 
         this.production_id = production_id;
         this.production_name = production_name;
@@ -16,6 +16,7 @@ public class ProductionList {
 
         this.minimum = minimum;
         this.maximum = maximum;
+        this.events_covered = events_covered;
 
     }
 
@@ -47,7 +48,7 @@ public class ProductionList {
         return maximum;
     }
 
-
-
-
+    public String getEvents_covered() {
+        return events_covered;
+    }
 }

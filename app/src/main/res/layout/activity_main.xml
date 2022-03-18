@@ -519,7 +519,7 @@
                                 android:id="@+id/searchTeam"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:queryHint="Search" />
+                                android:queryHint="Search offered services" />
                         </androidx.cardview.widget.CardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

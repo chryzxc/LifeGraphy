@@ -243,10 +243,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String text) {
                 if (text.matches("[a-zA-Z- .]+")){
-                    filterByName(text);
+                    filterByServices(text);
 
                 }else {
-                    filterByName(text);
+                    filterByServices(text);
                 }
                 return true;
             }
@@ -695,6 +695,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+
                 }
 
                     for (DataSnapshot child : dataSnapshot.child("production_team").getChildren()) {
@@ -847,10 +848,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (firebaseAuth.getCurrentUser() != null){
                         if (userGroup == false){
-                            production_myLists.add(new ProductionList(dsp.getKey(),production.get("production_name").toString(),String.valueOf(count),production.get("individual_skills").toString(),production.get("price_minimum").toString(),production.get("price_maximum").toString()));
+                            production_myLists.add(new ProductionList(dsp.getKey(),production.get("production_name").toString(),String.valueOf(count),production.get("individual_skills").toString(),production.get("price_minimum").toString(),production.get("price_maximum").toString(),production.get("events_covered").toString()));
                         }
                     }else{
-                        production_myLists.add(new ProductionList(dsp.getKey(),production.get("production_name").toString(),String.valueOf(count),production.get("individual_skills").toString(),production.get("price_minimum").toString(),production.get("price_maximum").toString()));
+                        production_myLists.add(new ProductionList(dsp.getKey(),production.get("production_name").toString(),String.valueOf(count),production.get("individual_skills").toString(),production.get("price_minimum").toString(),production.get("price_maximum").toString(),production.get("events_covered").toString()));
 
                     }
 
@@ -1116,6 +1117,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         findProduction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1363,29 +1365,101 @@ public class MainActivity extends AppCompatActivity {
                 category_rv.setLayoutManager(new GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false));
                 category_myLists=new ArrayList<>();
 
-                category_myLists.add(new CategoryList("Landscape",R.drawable.landscape,false));
-                category_myLists.add(new CategoryList("Wildlife",R.drawable.wildlife,false));
-                category_myLists.add(new CategoryList("Macro",R.drawable.macro,false));
-                category_myLists.add(new CategoryList("Underwater",R.drawable.underwater,false));
-                category_myLists.add(new CategoryList("Astrophotography",R.drawable.astrophotography,false));
-                category_myLists.add(new CategoryList("Aerial Photography",R.drawable.aerial,false));
-                category_myLists.add(new CategoryList("Scientific",R.drawable.scientific,false));
 
-                category_myLists.add(new CategoryList("Portraits",R.drawable.portraits,false));
-                category_myLists.add(new CategoryList("Weddings",R.drawable.weddings,false));
-                category_myLists.add(new CategoryList("Documentary",R.drawable.documentary,false));
-                category_myLists.add(new CategoryList("Sports",R.drawable.sports,false));
-                category_myLists.add(new CategoryList("Fashion",R.drawable.fashion,false));
-                category_myLists.add(new CategoryList("Commercial",R.drawable.commercial,false));
-                category_myLists.add(new CategoryList("Street Photography",R.drawable.street_photography,false));
-                category_myLists.add(new CategoryList("Event Photography",R.drawable.event_photography,false));
-                category_myLists.add(new CategoryList("Travel",R.drawable.travel,false));
-                category_myLists.add(new CategoryList("Pet Photography",R.drawable.pet_photography,false));
+                if(userCategories.contains("Landscape")){
+                    category_myLists.add(new CategoryList("Landscape",R.drawable.landscape,false));
+                }
+                if(userCategories.contains("Wildlife")){
+                    category_myLists.add(new CategoryList("Wildlife",R.drawable.wildlife,false));
+                }
+                if(userCategories.contains("Macro")){
+                    category_myLists.add(new CategoryList("Macro",R.drawable.macro,false));
+                }
+                if(userCategories.contains("Astrophotography")){
+                    category_myLists.add(new CategoryList("Astrophotography",R.drawable.astrophotography,false));
+                }
+                if(userCategories.contains("Aerial Photography")){
+                    category_myLists.add(new CategoryList("Aerial Photography",R.drawable.aerial,false));
+                }
+                if(userCategories.contains("Scientific")){
+                    category_myLists.add(new CategoryList("Scientific",R.drawable.scientific,false));
+                }
+                if(userCategories.contains("Underwater")){
+                    category_myLists.add(new CategoryList("Underwater",R.drawable.underwater,false));
+                }
 
-                category_myLists.add(new CategoryList("Product Photography",R.drawable.street_photography,false));
-                category_myLists.add(new CategoryList("Food",R.drawable.food,false));
-                category_myLists.add(new CategoryList("Still Life Photography",R.drawable.still_life_photography,false));
-                category_myLists.add(new CategoryList("Architecture",R.drawable.architecture,false));
+                if(userCategories.contains("Portraits")){
+                    category_myLists.add(new CategoryList("Portraits",R.drawable.portraits,false));
+                }
+
+                if(userCategories.contains("Weddings")){
+                    category_myLists.add(new CategoryList("Weddings",R.drawable.underwater,false));
+                }
+
+                if(userCategories.contains("Documentary")){
+                    category_myLists.add(new CategoryList("Documentary",R.drawable.documentary,false));
+                }
+                if(userCategories.contains("Sports")){
+                    category_myLists.add(new CategoryList("Sports",R.drawable.sports,false));
+                }
+
+                if(userCategories.contains("Fashion")){
+                    category_myLists.add(new CategoryList("Fashion",R.drawable.fashion,false));
+                }
+
+                if(userCategories.contains("Commercial")){
+                    category_myLists.add(new CategoryList("Commercial",R.drawable.commercial,false));
+                }
+
+                if(userCategories.contains("Street Photography")){
+                    category_myLists.add(new CategoryList("Street Photography",R.drawable.street_photography,false));
+                }
+
+                if(userCategories.contains("Event Photography")){
+                    category_myLists.add(new CategoryList("Event Photography",R.drawable.event_photography,false));
+                }
+
+                if(userCategories.contains("Travel")){
+                    category_myLists.add(new CategoryList("Travel",R.drawable.travel,false));
+                }
+
+                if(userCategories.contains("Pet Photography")){
+                    category_myLists.add(new CategoryList("Pet Photography",R.drawable.pet_photography,false));
+
+                }
+                if(userCategories.contains("Product Photography")){
+                    category_myLists.add(new CategoryList("Product Photography",R.drawable.product_photography,false));
+                }
+
+                if(userCategories.contains("Food")){
+                    category_myLists.add(new CategoryList("Food",R.drawable.food,false));
+                }
+
+                if(userCategories.contains("Still Life Photography")){
+                    category_myLists.add(new CategoryList("Still Life Photography",R.drawable.still_life_photography,false));
+                }
+
+                if(userCategories.contains("Architecture")){
+                    category_myLists.add(new CategoryList("Architecture",R.drawable.architecture,false));
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 category_adapter = new CategoryAdapter(category_myLists, MainActivity.this);
                 category_rv.setAdapter(category_adapter);
@@ -1585,7 +1659,7 @@ public class MainActivity extends AppCompatActivity {
             category_myLists.add(new CategoryList("Travel",R.drawable.travel,false));
             category_myLists.add(new CategoryList("Pet Photography",R.drawable.pet_photography,false));
 
-            category_myLists.add(new CategoryList("Product Photography",R.drawable.street_photography,false));
+            category_myLists.add(new CategoryList("Product Photography",R.drawable.product_photography,false));
             category_myLists.add(new CategoryList("Food",R.drawable.food,false));
             category_myLists.add(new CategoryList("Still Life Photography",R.drawable.still_life_photography,false));
             category_myLists.add(new CategoryList("Architecture",R.drawable.architecture,false));
@@ -1646,13 +1720,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void filterByName(String text){
+    public void filterByServices(String text){
         List<ProductionList> temp = new ArrayList();
         for(ProductionList d: production_myLists){
 
 
 
-            if(d.getProduction_name().toLowerCase().contains(text.toLowerCase())){
+            if(d.getEvents_covered().toLowerCase().contains(text.toLowerCase())){
                 temp.add(d);
             }
 
